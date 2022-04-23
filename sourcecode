@@ -1,0 +1,132 @@
+#include <stdio.h>
+void bubblesort();
+void selectionsort();
+int opt,n,i,j,temp,pos,a;
+int main()
+{
+	int opt,n,i,j,temp,pos;
+	printf("Choose the sorting method:\n\n\n1.Bubble Sort\n2.Selection Sort\n\nInput as 1 or 2 for choosing.");
+	scanf("%d",&opt);
+	if(opt==1){
+		bubblesort();
+	}
+	else{
+		selectionsort();
+	}
+	return 0;
+}
+
+void bubblesort(){
+	int type;
+	printf("Choose the sorting type:\n1.Ascending\n2.Decending\nInput as 1 or 2 for choosing.");
+	scanf("%d",&type);
+	
+	printf("How many digits you want to sort:");
+	int n,temp;
+	scanf("%d",&n);
+	int arr[n];
+	printf("\nEnter the digits, seperated by space:");
+	for(int i=0;i<n;i++){
+		scanf("%d",&arr[i]);
+	}
+
+	if(type==1){
+		for(int i=0;i<n;i++){
+			for(int j=0;j<(n-1);j++){
+				if(arr[j]>arr[j+1]){
+					temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+		}
+		
+	}
+	else{
+		for(int i=0;i<n;i++){
+			for(int j=0;j<(n-1);j++){
+				if(arr[j]<arr[j+1]){
+					temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+		}
+
+	}
+	for(int i=0;i<n;i++){
+			printf("%d",arr[i]);
+		}
+		
+	}
+
+
+
+void selectionsort()
+{
+	int type;
+	printf("Choose the sorting type:\n1.Ascending\n2.Decending\nInput as 1 or 2 for choosing.");
+	scanf("%d",&type);
+	
+	printf("How many digits you want to sort:");
+	int n,temp,min,pos;
+	scanf("%d",&n);
+	int arr[n];
+	printf("\nEnter the digits, seperated by space:");
+	for(int i=0;i<n;i++){
+		scanf("%d",&arr[i]);
+	}
+
+	if(type==1){
+		for(int i=0;i<(n-1);i++)
+		{
+			min=arr[i];
+			for(int j=0;j<n;j++)
+			{
+				if(arr[j]<min)
+				{
+					min=arr[j];
+					pos=j;
+				
+				}
+				temp=arr[i];
+				arr[i]=arr[pos];
+				arr[pos]=temp;
+			
+		    }
+		}
+		
+	}
+	
+	
+	else{
+		for(int i=0;i<(n-1);i++)
+		{
+			min=arr[i];
+			for(int j=0;j<n;j++)
+			{
+				if(arr[j]>min)
+				{
+					min=arr[j];
+					pos=j;
+				
+				}
+				temp=arr[i];
+				arr[i]=arr[pos];
+				arr[pos]=temp;
+			
+		    }
+		}
+		
+	}
+
+	
+	for(int i=0;i<n;++i)
+	{
+
+			printf("%d",arr[i]);
+		}
+		
+	}
+	
+	
