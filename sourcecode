@@ -1,34 +1,51 @@
 #include <stdio.h>
 void bubblesort();
 void selectionsort();
-int opt,n,i,j,temp,pos,a;
+int opt,n,i,j,temp,pos,a,flag=1;
+
 int main()
 {
-	int opt,n,i,j,temp,pos;
-	printf("Choose the sorting method:\n\n\n1.Bubble Sort\n2.Selection Sort\n\nInput as 1 or 2 for choosing.");
-	scanf("%d",&opt);
-	if(opt==1){
-		bubblesort();
-	}
-	else{
-		selectionsort();
+	printf("Hey! I can sort your array utilizing two distinctive methods!\n-----------------------------------------------------------\n\n");
+
+	int opt,n,i,j,temp,pos,loop;
+	while(flag==1){
+		printf("Choose the sorting method:\n\n1.Bubble Sort\n2.Selection Sort\n\nInput as 1 or 2 for choosing :");
+		scanf("%d",&opt);
+		if(opt==1){
+			bubblesort();
+		}
+		else{
+			selectionsort();
+		}
+		printf("\n\n\nWant to sort more?\n1.Yes\n2.No\n\nInput as 1 or 2 for choosing :");
+		scanf("%d",&loop);
+		if(loop!=1){
+			flag=0;
+		}
+		printf("\n\n")
 	}
 	return 0;
 }
 
 void bubblesort(){
 	int type;
-	printf("Choose the sorting type:\n1.Ascending\n2.Decending\nInput as 1 or 2 for choosing.");
+	printf("\n\nChoose the sorting type:\n1.Ascending\n2.Decending\n\nInput as 1 or 2 for choosing :");
 	scanf("%d",&type);
 	
-	printf("How many digits you want to sort:");
+	printf("\nHow many elements you want to sort :");
 	int n,temp;
 	scanf("%d",&n);
 	int arr[n];
-	printf("\nEnter the digits, seperated by space:");
+	printf("\nEnter the elements, seperated by space:");
 	for(int i=0;i<n;i++){
 		scanf("%d",&arr[i]);
 	}
+
+	printf("\nYour array before sorting:\n");
+	for(int i=0;i<n;i++){
+		printf("%d ",arr[i]);
+	}
+	
 
 	if(type==1){
 		for(int i=0;i<n;i++){
@@ -54,9 +71,12 @@ void bubblesort(){
 		}
 
 	}
+	printf("\nYour array after sorting:\n");
 	for(int i=0;i<n;i++){
-			printf("%d ",arr[i]);
-		}
+		printf("%d ",arr[i]);
+	}
+	
+
 		
 	}
 
@@ -65,17 +85,23 @@ void bubblesort(){
 void selectionsort()
 {
 	int type;
-	printf("Choose the sorting type:\n1.Ascending\n2.Decending\nInput as 1 or 2 for choosing.");
+	printf("\n\nChoose the sorting type:\n1.Ascending\n2.Decending\n\nInput as 1 or 2 for choosing.");
 	scanf("%d",&type);
 	
-	printf("How many digits you want to sort:");
+	printf("\nHow many elements you want to sort :");
 	int n,temp,min_idx;
 	scanf("%d",&n);
 	int arr[n];
-	printf("\nEnter the digits, seperated by space:");
+	printf("\nEnter the elements, seperated by space:");
 	for(int i=0;i<n;i++){
 		scanf("%d",&arr[i]);              
 	}    
+
+	printf("\nYour array before sorting:\n");
+	for(int i=0;i<n;i++){
+		printf("%d ",arr[i]);
+	}
+	
 
 	if(type==1){
 
@@ -117,12 +143,10 @@ void selectionsort()
 	
 
 	
-	for(int i=0;i<n;++i)
-	{
-
-			printf("%d ",arr[i]);
-		}
-		
+	printf("\nYour array after sorting:\n");
+	for(int i=0;i<n;i++){
+		printf("%d ",arr[i]);
 	}
 	
-	
+		
+	}
