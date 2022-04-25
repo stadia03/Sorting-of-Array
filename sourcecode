@@ -22,7 +22,7 @@ int main()
 		if(loop!=1){
 			flag=0;
 		}
-		printf("\n\n")
+		printf("\n\n");
 	}
 	return 0;
 }
