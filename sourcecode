@@ -55,7 +55,7 @@ void bubblesort(){
 
 	}
 	for(int i=0;i<n;i++){
-			printf("%d",arr[i]);
+			printf("%d ",arr[i]);
 		}
 		
 	}
@@ -69,62 +69,58 @@ void selectionsort()
 	scanf("%d",&type);
 	
 	printf("How many digits you want to sort:");
-	int n,temp,min,pos;
+	int n,temp,min_idx;
 	scanf("%d",&n);
 	int arr[n];
 	printf("\nEnter the digits, seperated by space:");
 	for(int i=0;i<n;i++){
-		scanf("%d",&arr[i]);
-	}
+		scanf("%d",&arr[i]);              
+	}    
 
 	if(type==1){
-		for(int i=0;i<(n-1);i++)
-		{
-			min=arr[i];
-			for(int j=0;j<n;j++)
-			{
-				if(arr[j]<min)
-				{
-					min=arr[j];
-					pos=j;
-				
-				}
-				temp=arr[i];
-				arr[i]=arr[pos];
-				arr[pos]=temp;
-			
-		    }
-		}
-		
+
+		for (i = 0; i < n-1; i++)
+    	{
+        // Find the minimum element in unsorted array
+        min_idx = i;
+        for (j = i+1; j < n; j++)
+          if (arr[j] < arr[min_idx])
+            min_idx = j;
+  
+        // Swap the found minimum element with the first element
+        int temp = arr[min_idx];
+    arr[min_idx] = arr[i];
+    arr[i] = temp;
+        
+    	}
 	}
+	
 	
 	
 	else{
-		for(int i=0;i<(n-1);i++)
-		{
-			min=arr[i];
-			for(int j=0;j<n;j++)
-			{
-				if(arr[j]>min)
-				{
-					min=arr[j];
-					pos=j;
-				
-				}
-				temp=arr[i];
-				arr[i]=arr[pos];
-				arr[pos]=temp;
-			
-		    }
-		}
+		for (i = 0; i < n-1; i++)
+    {
+        // Find the minimum element in unsorted array
+        min_idx = i;
+        for (j = i+1; j < n; j++)
+          if (arr[j] > arr[min_idx])
+            min_idx = j;
+  
+        // Swap the found minimum element with the first element
+        int temp = arr[min_idx];
+    arr[min_idx] = arr[i];
+    arr[i] = temp;
+        
+    }
+}
 		
-	}
+	
 
 	
 	for(int i=0;i<n;++i)
 	{
 
-			printf("%d",arr[i]);
+			printf("%d ",arr[i]);
 		}
 		
 	}
