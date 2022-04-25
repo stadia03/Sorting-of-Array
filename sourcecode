@@ -28,6 +28,7 @@ int main()
 }
 
 void bubblesort(){
+	
 	int type;
 	printf("\n\nChoose the sorting type:\n1.Ascending\n2.Decending\n\nInput as 1 or 2 for choosing :");
 	scanf("%d",&type);
@@ -71,7 +72,7 @@ void bubblesort(){
 		}
 
 	}
-	printf("\nYour array after sorting:\n");
+	printf("\nSorted array using bubble sort :\n");
 	for(int i=0;i<n;i++){
 		printf("%d ",arr[i]);
 	}
@@ -143,7 +144,7 @@ void selectionsort()
 	
 
 	
-	printf("\nYour array after sorting:\n");
+	printf("\nSorted array using selection sort :\n");
 	for(int i=0;i<n;i++){
 		printf("%d ",arr[i]);
 	}
