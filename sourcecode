@@ -80,7 +80,7 @@ void bubblesort(){
 
 	}
     //printing array after sorting
-	printf("\nSorted array using bubble sort :\n");
+	printf("\nSorted array using BUBBLE SORT :\n");
 	for(int i=0;i<n;i++){
 		printf("%d ",arr[i]);
 	}
@@ -156,7 +156,7 @@ void selectionsort()
 	
 
 	//printing sorted array
-	printf("\nSorted array using selection sort :\n");
+	printf("\nSorted array using SELECTION SORT :\n");
 	for(int i=0;i<n;i++){
 		printf("%d ",arr[i]);
 	}
