@@ -8,6 +8,8 @@ int main()
 	printf("Hey! I can sort your array utilizing two distinctive methods!\n-----------------------------------------------------------\n\n");
 
 	int opt,n,i,j,temp,pos,loop;
+
+    //Choosing method to swap
 	while(flag==1){
 		printf("Choose the sorting method:\n\n1.Bubble Sort\n2.Selection Sort\n\nInput as 1 or 2 for choosing :");
 		scanf("%d",&opt);
@@ -24,6 +26,7 @@ int main()
 		}
 		printf("\n\n");
 	}
+    printf("Thankyou! for using my program!");
 	return 0;
 }
 
@@ -37,17 +40,20 @@ void bubblesort(){
 	int n,temp;
 	scanf("%d",&n);
 	int arr[n];
+
+    //taking array input 
 	printf("\nEnter the elements, seperated by space:");
 	for(int i=0;i<n;i++){
 		scanf("%d",&arr[i]);
 	}
-
+    
+    //printing array before sorting
 	printf("\nYour array before sorting:\n");
 	for(int i=0;i<n;i++){
 		printf("%d ",arr[i]);
 	}
 	
-
+    //bubble sorting in ascending order 
 	if(type==1){
 		for(int i=0;i<n;i++){
 			for(int j=0;j<(n-1);j++){
@@ -61,6 +67,7 @@ void bubblesort(){
 		
 	}
 	else{
+        //else bubble sorting in decending order
 		for(int i=0;i<n;i++){
 			for(int j=0;j<(n-1);j++){
 				if(arr[j]<arr[j+1]){
@@ -72,6 +79,7 @@ void bubblesort(){
 		}
 
 	}
+    //printing array after sorting
 	printf("\nSorted array using bubble sort :\n");
 	for(int i=0;i<n;i++){
 		printf("%d ",arr[i]);
@@ -93,10 +101,12 @@ void selectionsort()
 	int n,temp,min_idx;
 	scanf("%d",&n);
 	int arr[n];
+    //taking array input
 	printf("\nEnter the elements, seperated by space:");
 	for(int i=0;i<n;i++){
 		scanf("%d",&arr[i]);              
 	}    
+    //printing array before sorting 
 
 	printf("\nYour array before sorting:\n");
 	for(int i=0;i<n;i++){
@@ -105,7 +115,7 @@ void selectionsort()
 	
 
 	if(type==1){
-
+        //selection sorting in ascending order
 		for (i = 0; i < n-1; i++)
     	{
         // Find the minimum element in unsorted array
@@ -125,6 +135,8 @@ void selectionsort()
 	
 	
 	else{
+
+        //else selection sorting in desending order
 		for (i = 0; i < n-1; i++)
     {
         // Find the minimum element in unsorted array
@@ -143,7 +155,7 @@ void selectionsort()
 		
 	
 
-	
+	//printing sorted array
 	printf("\nSorted array using selection sort :\n");
 	for(int i=0;i<n;i++){
 		printf("%d ",arr[i]);
