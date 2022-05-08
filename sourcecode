@@ -26,7 +26,7 @@ int main()
 		}
 		printf("\n\n");
 	}
-    printf("Thankyou! for using my program!");
+    printf("Thankyou! for using my program!\n-By Gaurab");
 	return 0;
 }
 
